@@ -18,10 +18,34 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+@layer components {
+  .navLink {
+    @apply p-4 text-center capitalize transition-transform duration-200 ease-out rounded-full cursor-pointer hover:underline decoration-orange-400 decoration-2 active:underline underline-offset-8 hover:font-bold hover:scale-110;
+  }
+
+  .headerTitle {
+    @apply text-4xl font-serif capitalize px-10 pt-5 underline decoration-orange-400 decoration-2
+    underline-offset-4 decoration-double
+  }
+
+  .navButton {
+    @apply mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white
+  }
 }
