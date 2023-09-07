@@ -15,8 +15,8 @@ export async function POST(req) {
         payment_method_types: ["card"],
         line_items: res,
         mode: "payment",
-        success_url: "https://eshop-full-jb27tq5s6-jsworldwebstudio-gmailcom.vercel.app/checkout" + "?status=success",
-        cancel_url: "https://eshop-full-jb27tq5s6-jsworldwebstudio-gmailcom.vercel.app/checkout" + "?status=cancel",
+        success_url: "http://localhost:3000/checkout" + "?status=success",
+        cancel_url: "http://localhost:3000/checkout" + "?status=cancel",
       });
 
       return NextResponse.json({
